@@ -1,3 +1,7 @@
-#nav{
+#nav li{
     display: inline-block;
+}
+
+body{
+    background-color: "blue";
 }
