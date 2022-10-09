@@ -4,18 +4,9 @@ const fs = require('fs');
 const url = require('url');
 const http = require('http');
 
+
+/* write a list with project about_me Home Resume Contact */
  
-http.createServer(function(request, response){
-    response.writeHeader(200, {"Content-Type": "text/html"});  
-    response.writeFile("<html>");
-    response.writeFile("<ul>");
-    response.writeFile("<li>");
-    response.writeFile("dlkajdfl;dfsla");
-    response.writeFile("</li>");
-    response.writeFile("</ul>");
-    response.writeFile("</html>");  
-    response.end(); 
-})
 
 app.get('/', (req,res) =>{
 
@@ -33,6 +24,25 @@ app.get('/about',(req,res)=>{
         res.send(data);
     })
 })
+
+app.get('/resume', (req,res) =>{
+
+    fs.readFile("./resume.doc", "utf8", function(err,data){
+        if(err) throw err;
+
+        res.send(data);
+    });
+});
+
+app.get('/contact', (req,res) =>{
+
+    fs.readFile("./contact.html", "utf8", function(err,data){
+        if(err) throw err;
+
+        res.send(data);
+    });
+});
+
 
 app.listen(3333, ()=>{
     console.log("I am listing to you");
