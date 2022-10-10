@@ -27,7 +27,7 @@ app.get('/about',(req,res)=>{
 
 app.get('/resume', (req,res) =>{
 
-    fs.readFile("./resume.doc", "utf8", function(err,data){
+    fs.readFile("./resume.html", "utf8", function(err,data){
         if(err) throw err;
 
         res.send(data);
