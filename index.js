@@ -6,7 +6,11 @@ const http = require('http');
 
 
 /* write a list with project about_me Home Resume Contact */
- 
+/* Look at this for help:
+    https://youtu.be/SccSCuHhOw0
+ */
+
+app.use(express.static('node_project2' + '/public'));
 
 app.get('/', (req,res) =>{
 
